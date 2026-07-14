@@ -1,5 +1,4 @@
-// VS Code Portfolio Data Configuration
-// Update the "#" placeholders below with your actual live links.
+
 
 const PORTFOLIO_DATA = {
   personal: {
