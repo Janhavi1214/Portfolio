@@ -10,9 +10,9 @@ const PORTFOLIO_DATA = {
     resume: "#", // Replace with your resume link
     aboutText: "I'm a final-year CS student who likes building systems from the ground up — payment backends, order matching engines, and ML pipelines. My work spans fintech-style REST APIs, VRP-based logistics optimization, and applied ML, backed by a strong DSA foundation (700+ problems solved). I'm looking to bring that systems-first mindset to a backend or AI/ML engineering team.",
     socials: {
-      github: "#", // Replace with your GitHub URL
-      linkedin: "#", // Replace with your LinkedIn URL
-      leetcode: "#", // Replace with your LeetCode URL
+      github: "https://github.com/Janhavi1214", // Replace with your GitHub URL
+      linkedin: "https://www.linkedin.com/in/janhavi-vaidya-9861252a8/", // Replace with your LinkedIn URL
+      leetcode: "https://leetcode.com/u/Janhavi_Vaidya/", // Replace with your LeetCode URL
     }
   },
 
@@ -93,7 +93,7 @@ const PORTFOLIO_DATA = {
       title: "Digital Wallet & Payment Backend",
       description: "A fintech REST API covering the full transaction lifecycle: wallet management, UPI/NEFT/IMPS payment processing, fraud detection, and KYC verification. Implements JWT authentication, Spring Security RBAC, async audit logging, a JUnit 5/Mockito test suite, and Swagger API docs, containerized with Docker.",
       tech: ["Spring Boot 3.2", "Java 21", "MySQL 8.0", "Docker", "JWT", "Spring Security"],
-      github: "#",
+      github: "https://github.com/Janhavi1214/Microservice-E-comm",
       live: "#",
       banner: "https://img.icons8.com/fluency/144/000000/wallet.png"
     },
@@ -102,16 +102,34 @@ const PORTFOLIO_DATA = {
       title: "Trading Backend",
       description: "A stock exchange order matching backend implementing Price-Time Priority execution using a dual-heap architecture (max-heap for BUY orders, min-heap for SELL orders). Supports partial and full order fills, trade execution, and full order lifecycle transitions, with RESTful APIs for order placement, tracking, and trade history.",
       tech: ["Java", "Spring Boot", "MySQL", "Spring Data JPA", "REST APIs"],
-      github: "#",
+      github: "https://github.com/Janhavi1214/Order-Matching-Engine-Full-Stack",
       live: "#",
       banner: "https://img.icons8.com/fluency/144/000000/stocks.png"
+    },
+    {
+      name: "Microservice E-Comm",
+      title: "E-Commerce Microservices Backend",
+      description: "A distributed e-commerce backend built with Spring Boot and Spring Cloud, split into independent CustomerService, OrderService, and ProductService modules. Uses Eureka for service discovery and an API Gateway for centralized routing, enabling each service to scale and deploy independently.",
+      tech: ["Spring Boot", "Spring Cloud", "Eureka", "API Gateway", "Java", "REST APIs"],
+      github: "https://github.com/Janhavi1214/Microservice-E-comm",
+      live: "#",
+      banner: "https://img.icons8.com/fluency/144/000000/api-settings.png"
+    },
+    {
+      name: "Socket Programming",
+      title: "Concurrent TCP Networking System",
+      description: "Built Java-based TCP client-server applications showcasing network communication, concurrent client handling, and synchronized shared-state management. Features a restaurant ordering service and a multithreaded banking system that safely processes simultaneous client requests using thread synchronization.",
+      tech: ["Java", "TCP", "Socket", "ServerSocket", "Multithreading", "Synchronization"],
+      github: "https://github.com/Janhavi1214/Socket_programming",
+      live: "#",
+      banner: "https://img.icons8.com/fluency/144/network.png"
     },
     {
       name: "F1 Race Winner Prediction Model",
       title: "Race Time Prediction using Telemetry Data",
       description: "A data-driven prediction system for Formula 1 race times using historical telemetry, sector-wise timing, and team performance data. Engineered features from raw race data and trained Linear Regression, Random Forest, and XGBoost models, comparing performance to select the best-fit model.",
       tech: ["Python", "Regression", "Random Forest", "XGBoost"],
-      github: "#",
+      github: "https://github.com/Janhavi1214/F1_emilia_2025",
       live: "#",
       banner: "https://img.icons8.com/color/144/000000/racing-flag.png"
     },

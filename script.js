@@ -2,13 +2,12 @@
 
 // ── File metadata for tabs and breadcrumbs ─────────────────────────────────
 const PAGE_FILES = {
-  about:        { name: "about.html",        icon: "https://img.icons8.com/color/48/html-5--v1.png",       lang: "HTML"       },
-  experience:   { name: "experience.css",    icon: "https://img.icons8.com/color/48/css3.png",             lang: "CSS"        },
-  skills:       { name: "skills.js",         icon: "https://img.icons8.com/color/48/javascript--v1.png",   lang: "JavaScript" },
-  projects:     { name: "projects.json",     icon: "https://img.icons8.com/color/48/json--v1.png",         lang: "JSON"       },
-  achievements: { name: "achievements.md",   icon: "https://img.icons8.com/color/48/markdown.png",         lang: "Markdown"   },
-  contact:      { name: "contact.md",        icon: "https://img.icons8.com/color/48/markdown.png",         lang: "Markdown"   },
-  hobbies:      { name: "hobbies.txt",       icon: "https://img.icons8.com/color/48/txt.png",             lang: "Plain Text"  },
+  about: { name: "about.html", icon: "https://img.icons8.com/color/48/html-5--v1.png", lang: "HTML" },
+  experience: { name: "experience.css", icon: "https://img.icons8.com/color/48/css3.png", lang: "CSS" },
+  skills: { name: "skills.js", icon: "https://img.icons8.com/color/48/javascript--v1.png", lang: "JavaScript" },
+  projects: { name: "projects.json", icon: "https://img.icons8.com/color/48/json--v1.png", lang: "JSON" },
+  achievements: { name: "achievements.md", icon: "https://img.icons8.com/color/48/markdown.png", lang: "Markdown" },
+  contact: { name: "contact.md", icon: "https://img.icons8.com/color/48/markdown.png", lang: "Markdown" },
 };
 
 // Opened tabs (persists through navigation)
@@ -95,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function handleRouting() {
   const hash = window.location.hash || "#about";
   const page = hash.replace("#", "");
-  
+
   // Update active state in navigation header
   menuLinks.forEach(link => {
     const dataPage = link.getAttribute("data-page");
@@ -127,7 +126,7 @@ function handleRouting() {
 // Route Content Renderer
 function renderPageContent(page) {
   let html = "";
-  
+
   switch (page) {
     case "about":
       html = renderAboutPage();
@@ -147,13 +146,10 @@ function renderPageContent(page) {
     case "contact":
       html = renderContactPage();
       break;
-    case "hobbies":
-      html = renderHobbiesPage();
-      break;
     default:
       html = renderAboutPage();
   }
-  
+
   contentViewport.innerHTML = html;
 
   // Add event listener for contact form if it exists
@@ -188,13 +184,13 @@ function renderAboutPage() {
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
               <span>Projects ...</span>
             </div>
+            <div class="shortcut-item" onclick="location.hash='#experience'">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8-9 8a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8 9-8s9 3.694 9 8.25z"/></svg>
+              <span>Experience ...</span>
+            </div>
             <div class="shortcut-item" onclick="location.hash='#contact'">
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8-9 8a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8 9-8s9 3.694 9 8.25z"/></svg>
               <span>Get in Touch ...</span>
-            </div>
-            <div class="shortcut-item" onclick="location.hash='#hobbies'">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
-              <span>Hobbies ...</span>
             </div>
           </div>
           
@@ -224,13 +220,6 @@ function renderAboutPage() {
             <div class="social-link-card">
               <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/28/null/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png" alt="LeetCode">
               <span>LeetCode Profile</span>
-            </div>
-          </a>
-
-          <a href="${PORTFOLIO_DATA.personal.socials.codeforces}" target="_blank">
-            <div class="social-link-card">
-              <img src="https://img.icons8.com/color/28/null/codeforces.png" alt="CodeForces">
-              <span>CodeForces Profile</span>
             </div>
           </a>
         </div>
@@ -294,9 +283,23 @@ function renderSkillsPage() {
         </div>
 
         <div class="skills-category-group">
-          <h3 class="skills-cat-title">Full-Stack Development</h3>
+          <h3 class="skills-cat-title">Backend Development</h3>
           <div class="skills-items-grid">
-            ${PORTFOLIO_DATA.skills.webDevelopment.map(s => `
+            ${PORTFOLIO_DATA.skills.backend.map(s => `
+              <div class="skill-pill-card">
+                <div class="skill-logo-box">
+                  <img src="${s.icon}" alt="${s.name}">
+                </div>
+                <span class="skill-card-name">${s.name}</span>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+
+        <div class="skills-category-group">
+          <h3 class="skills-cat-title">Data & ML</h3>
+          <div class="skills-items-grid">
+            ${PORTFOLIO_DATA.skills.dataAndML.map(s => `
               <div class="skill-pill-card">
                 <div class="skill-logo-box">
                   <img src="${s.icon}" alt="${s.name}">
@@ -440,26 +443,7 @@ function renderContactPage() {
   `;
 }
 
-// 7. HOBBIES PAGE
-function renderHobbiesPage() {
-  return `
-    <div class="page-wrapper">
-      <h1 class="section-title">Hobbies</h1>
-      <p class="section-subtitle-description">List of stuff i like to do in my Spare Time.</p>
-      
-      <div class="hobbies-layout-grid">
-        ${PORTFOLIO_DATA.hobbies.map(hobby => `
-          <div class="hobby-item-card">
-            <div class="hobby-logo-container">
-              <img src="${hobby.icon}" alt="${hobby.name}">
-            </div>
-            <h3 class="hobby-item-title">${hobby.name}</h3>
-          </div>
-        `).join("")}
-      </div>
-    </div>
-  `;
-}
+
 
 // Submit contact form & show visual notification
 function handleFormSubmit() {
@@ -563,7 +547,7 @@ function closeTab(e, page) {
 // ══════════════════════════════════════════════════
 function initCommandPalette() {
   const overlay = document.getElementById("cmd-palette-overlay");
-  const input   = document.getElementById("cmd-palette-input");
+  const input = document.getElementById("cmd-palette-input");
   const results = document.getElementById("cmd-palette-results");
   const trigger = document.getElementById("cmd-palette-trigger");
   if (!overlay || !input || !results) return;
